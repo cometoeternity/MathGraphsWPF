@@ -24,9 +24,8 @@ namespace WpfGraphView
     {
         public MainWindow()
         {
-            this.MyModel = new PlotModel { Title = "Example 1" };
-            this.MyModel.Series.Add(new FunctionSeries(Math.Exp, 0, 10, 0.1,"sin(x)"));
+            InitializeComponent();
         }
-        public PlotModel MyModel { get; private set; }
+
     }
-    }
+}
