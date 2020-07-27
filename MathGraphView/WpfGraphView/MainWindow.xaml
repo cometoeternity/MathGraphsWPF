@@ -295,6 +295,18 @@
     </Window.Resources>
     <Grid>
         <Grid Margin="20,20,10,30.4" Background="#1C2F3E">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="30"
                                   ShadowDepth="2"
@@ -309,48 +321,48 @@
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="5,5,5,5" Style="{DynamicResource SinButton}" MouseEnter="sin_MouseEnter" MouseLeave="sin_MouseLeave">
+                        Margin="5,5,5,5" Style="{DynamicResource SinButton}" MouseEnter="sin_MouseEnter" MouseLeave="sin_MouseLeave" Click="sin_Click">
                     <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">Sin(x)</TextBlock>
                 </Button>
                 <Button x:Name="cos"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="5,5,5,5" Style="{DynamicResource CosButton}" MouseEnter="cos_MouseEnter" MouseLeave="cos_MouseLeave">
+                        Margin="5,5,5,5" Style="{DynamicResource CosButton}" MouseEnter="cos_MouseEnter" MouseLeave="cos_MouseLeave" Click="cos_Click">
                     <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">Cos(x)</TextBlock>
                 </Button>
                 <Button x:Name="tg"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="5,5,5,5" Style="{DynamicResource TgButton}" MouseEnter="tg_MouseEnter" MouseLeave="tg_MouseLeave">
+                        Margin="5,5,5,5" Style="{DynamicResource TgButton}" MouseEnter="tg_MouseEnter" MouseLeave="tg_MouseLeave" Click="tg_Click">
                     <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">Tg(x)</TextBlock>
                 </Button>
                 <Button x:Name="ctg"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="5,5,5,5" Style="{DynamicResource CtgButton}" MouseEnter="ctg_MouseEnter" MouseLeave="ctg_MouseLeave">
+                        Margin="5,5,5,5" Style="{DynamicResource CtgButton}" MouseEnter="ctg_MouseEnter" MouseLeave="ctg_MouseLeave" Click="ctg_Click">
                     <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">Ctg(x)</TextBlock>
                 </Button>
                 <Button x:Name="exp"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="5,5,5,5" Style="{DynamicResource ExpButton}" MouseEnter="exp_MouseEnter" MouseLeave="exp_MouseLeave">
+                        Margin="5,5,5,5" Style="{DynamicResource ExpButton}" MouseEnter="exp_MouseEnter" MouseLeave="exp_MouseLeave" Click="exp_Click">
                     <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">Exp(e)</TextBlock>
                 </Button>
                 <Button x:Name="log"
                         Height="100"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        Margin="5,5,5,5" Style="{DynamicResource LogButton}" MouseEnter="log_MouseEnter" MouseLeave="log_MouseLeave">
+                        Margin="5,5,5,5" Style="{DynamicResource LogButton}" MouseEnter="log_MouseEnter" MouseLeave="log_MouseLeave" Click="log_Click">
                     <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">Log</TextBlock>
                 </Button>
             </StackPanel>
             <Grid Height="85"
                   VerticalAlignment="Top"
-                  Background="#233C4F" Margin="300,0,0,0">
+                  Background="#233C4F" Margin="300,0,0,0" Grid.ColumnSpan="2">
                 <TextBlock Text="Построение функций"
                            FontSize="32"
                            VerticalAlignment="Center"
@@ -370,11 +382,11 @@
             <Popup x:Name="popup_uc"
                    AllowsTransparency="True"
                    HorizontalOffset="10"
-                   VerticalOffset="10">
+                   VerticalOffset="10" Grid.ColumnSpan="2">
                 <Grid>
                     <local:PopupUserControll x:Name="Header" Foreground="#E0FFFF"/>
                 </Grid>
-                
+
             </Popup>
         </Grid>
     </Grid>

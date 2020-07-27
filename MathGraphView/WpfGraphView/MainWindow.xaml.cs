@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 using OxyPlot;
 using OxyPlot.Series;
+using WpfGraphView.Windows;
 
 namespace WpfGraphView
 {
@@ -113,6 +114,42 @@ namespace WpfGraphView
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void sin_Click(object sender, RoutedEventArgs e)
+        {
+            SinWindow sinWindow = new SinWindow();
+            sinWindow.Show();
+        }
+
+        private void cos_Click(object sender, RoutedEventArgs e)
+        {
+            CosWindow cosWindow = new CosWindow();
+            cosWindow.Show();
+        }
+
+        private void tg_Click(object sender, RoutedEventArgs e)
+        {
+            TgWindow tgWindow = new TgWindow();
+            tgWindow.Show();
+        }
+
+        private void ctg_Click(object sender, RoutedEventArgs e)
+        {
+            CtgWindow ctgWindow = new CtgWindow();
+            ctgWindow.Show();
+        }
+
+        private void exp_Click(object sender, RoutedEventArgs e)
+        {
+            ExpWindow expWindow = new ExpWindow();
+            expWindow.Show();
+        }
+
+        private void log_Click(object sender, RoutedEventArgs e)
+        {
+            LogWindow logWindow = new LogWindow();
+            logWindow.Show();
         }
     }
 }
