@@ -32,6 +32,17 @@
                                   Color="Gray">
                 </DropShadowEffect>
             </Grid.Effect>
+            <Label Content="Ось Х:" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="220" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
+            <TextBox HorizontalAlignment="Left" Height="60" Margin="280,100,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="265" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
+            <Label Content="Ось У:" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" Width="220" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
+            <TextBox HorizontalAlignment="Left" Height="60" Margin="280,180,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="265" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
+            <Label Content="Амплитуда:" HorizontalAlignment="Left" Margin="50,260,0,0" VerticalAlignment="Top" Width="220" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
+            <TextBox HorizontalAlignment="Left" Height="60" Margin="280,260,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="265" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
+            <Label Content="Сжатие:" HorizontalAlignment="Left" Margin="50,340,0,0" VerticalAlignment="Top" Width="220" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
+            <TextBox HorizontalAlignment="Left" Height="60" Margin="280,340,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="265" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
+            <Label Content="Сдвиг:" HorizontalAlignment="Left" Margin="50,420,0,0" VerticalAlignment="Top" Width="220" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
+            <TextBox HorizontalAlignment="Left" Height="60" Margin="280,420,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="265" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
+            <Button Content="Построить" Margin="500,550,60,30" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
         </Grid>
         <Grid Height="97"
                   VerticalAlignment="Top"
