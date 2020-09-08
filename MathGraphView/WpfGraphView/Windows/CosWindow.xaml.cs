@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using OxyPlot;
+using OxyPlot.Series;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfGraphView.Windows.OxyPlotWindow;
 
 namespace WpfGraphView
 {
@@ -23,10 +26,15 @@ namespace WpfGraphView
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void cosButton_Click(object sender, RoutedEventArgs e)
+        {
+            CosOxyplotWindow oxyplotPage = new CosOxyplotWindow();
+            oxyplotPage.Show();
         }
     }
 }

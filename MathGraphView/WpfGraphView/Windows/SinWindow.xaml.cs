@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfGraphView.Windows;
+using WpfGraphView.Windows.OxyPlotWindow;
 
 namespace WpfGraphView
 {
@@ -27,6 +29,13 @@ namespace WpfGraphView
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void sinButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            SinOxyplotWindow oxyplotPage = new SinOxyplotWindow();
+            oxyplotPage.Show();
         }
     }
 }

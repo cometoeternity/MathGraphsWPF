@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfGraphView.Windows.OxyPlotWindow;
 
 namespace WpfGraphView
 {
@@ -27,6 +28,12 @@ namespace WpfGraphView
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void expButton_Click(object sender, RoutedEventArgs e)
+        {
+            ExpOxyplotWindow oxyplotPage = new ExpOxyplotWindow();
+            oxyplotPage.Show();
         }
     }
 }

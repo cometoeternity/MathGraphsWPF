@@ -37,7 +37,7 @@
             <TextBox x:Name="logSjatieTextBox" HorizontalAlignment="Left" Height="57" Margin="365,300,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="273" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
             <Label Content="Сдвиг:" HorizontalAlignment="Left" Margin="50,400,0,0" VerticalAlignment="Top" Width="220" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
             <TextBox x:Name="logSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="365,400,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="273" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
-            <Button x:Name="logButton" Content="Построить" Margin="500,550,60,30" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
+            <Button x:Name="logButton" Content="Построить" Margin="500,550,60,30" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" Click="logButton_Click"/>
         </Grid>
         <Grid Height="97"
                   VerticalAlignment="Top"

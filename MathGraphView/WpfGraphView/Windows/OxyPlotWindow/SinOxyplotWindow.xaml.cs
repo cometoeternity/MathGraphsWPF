@@ -11,29 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfGraphView.Windows.OxyPlotWindow;
 
 namespace WpfGraphView.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для LogWindow.xaml
+    /// Логика взаимодействия для SinOxyplotWindow.xaml
     /// </summary>
-    public partial class LogWindow : Window
+    public partial class SinOxyplotWindow : Window
     {
-        public LogWindow()
+        public SinOxyplotWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void logButton_Click(object sender, RoutedEventArgs e)
-        {
-            LogOxyplotWindow oxyplotPage = new LogOxyplotWindow();
-            oxyplotPage.Show();
         }
     }
 }
