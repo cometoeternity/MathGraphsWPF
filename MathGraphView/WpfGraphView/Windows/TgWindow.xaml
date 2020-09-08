@@ -55,8 +55,8 @@
                         BorderThickness="0"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Right" Margin="0,5,5,0"  Click="Button_Click">
-                <Image Source="C:/Users/Acer/Downloads/icons8-delete-30.png"
-                           Stretch="None"></Image>
+                <Image Source="C:\Users\Acer\source\repos\MathGraphsWPF\MathGraphView\WpfGraphView\Resourses\icons8-удалить-30.png"
+                    Stretch="None"></Image>
             </Button>
         </Grid>
     </Grid>
