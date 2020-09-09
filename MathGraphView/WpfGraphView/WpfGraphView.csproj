@@ -69,6 +69,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Point.cs" />
+    <Compile Include="Models\PointGeneratorCos.cs" />
+    <Compile Include="Models\PointGeneratorCtg.cs" />
+    <Compile Include="Models\PointGeneratorExp.cs" />
+    <Compile Include="Models\PointGeneratorLog.cs" />
+    <Compile Include="Models\PointGeneratorSin.cs" />
+    <Compile Include="Models\PointGeneratorTg.cs" />
     <Compile Include="Windows\CosWindow.xaml.cs">
       <DependentUpon>CosWindow.xaml</DependentUpon>
     </Compile>
