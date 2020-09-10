@@ -13,21 +13,20 @@ namespace WpfGraphView.Models
         {
             Points = new List<Point>();
         }
-        public List<Point> PointGenerator(double limitStart, double limitFinish, double y, double z, double w)
+        public List<Point> PointGenerator(double expLimitStart, double expLimitFinish, double expAmplit, double expSjatie, double expXSdvig, double expYSdvig)
         {
             Points = new List<Point>();
-            for (double x = limitStart; x < limitFinish; x += 0.1)
+            for (double x = expLimitStart; x < expLimitFinish; x += 0.5)
             {
-                Points.Add(new Point(x, Calculate(x, y, z, w)));
+                Points.Add(new Point(x, Calculate(x, expAmplit, expSjatie, expXSdvig, expYSdvig)));
             }
             return Points;
         }
 
-        private double Calculate(double x, double y, double z, double w)
+        private double Calculate(double x, double expAmplit, double expSjatie, double expXSdvig, double expYSdvig)
         {
-            var b = Math.Exp(x);
-            return b;
+            return expAmplit * Math.Cos(x * expSjatie + expXSdvig) + expYSdvig;
         }
     }
 }
-}
+

@@ -77,7 +77,7 @@ namespace WpfGraphView
             popup_uc.PlacementTarget = ctg;
             popup_uc.Placement = PlacementMode.Right;
             popup_uc.IsOpen = true;
-            Header.PopupText.Text = "Катангенс";
+            Header.PopupText.Text = "Гипербола";
         }
 
         private void ctg_MouseLeave(object sender, MouseEventArgs e)

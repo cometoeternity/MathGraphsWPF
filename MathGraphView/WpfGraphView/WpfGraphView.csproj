@@ -71,7 +71,7 @@
     </ApplicationDefinition>
     <Compile Include="Models\Point.cs" />
     <Compile Include="Models\PointGeneratorCos.cs" />
-    <Compile Include="Models\PointGeneratorCtg.cs" />
+    <Compile Include="Models\PointGeneratorParab.cs" />
     <Compile Include="Models\PointGeneratorExp.cs" />
     <Compile Include="Models\PointGeneratorLog.cs" />
     <Compile Include="Models\PointGeneratorSin.cs" />
@@ -79,8 +79,8 @@
     <Compile Include="Windows\CosWindow.xaml.cs">
       <DependentUpon>CosWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\CtgWindow.xaml.cs">
-      <DependentUpon>CtgWindow.xaml</DependentUpon>
+    <Compile Include="Windows\ParabWindow.xaml.cs">
+      <DependentUpon>ParabWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ExpWindow.xaml.cs">
       <DependentUpon>ExpWindow.xaml</DependentUpon>
@@ -91,8 +91,8 @@
     <Compile Include="Windows\OxyPlotWindow\CosOxyplotWindow.xaml.cs">
       <DependentUpon>CosOxyplotWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\OxyPlotWindow\CtgOxyplotWindow.xaml.cs">
-      <DependentUpon>CtgOxyplotWindow.xaml</DependentUpon>
+    <Compile Include="Windows\OxyPlotWindow\ParabOxyplotWindow.xaml.cs">
+      <DependentUpon>ParabOxyplotWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\OxyPlotWindow\ExpOxyplotWindow.xaml.cs">
       <DependentUpon>ExpOxyplotWindow.xaml</DependentUpon>
@@ -116,7 +116,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\CtgWindow.xaml">
+    <Page Include="Windows\ParabWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,7 +148,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\OxyPlotWindow\CtgOxyplotWindow.xaml">
+    <Page Include="Windows\OxyPlotWindow\ParabOxyplotWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

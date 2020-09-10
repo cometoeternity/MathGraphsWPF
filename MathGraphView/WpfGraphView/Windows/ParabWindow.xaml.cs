@@ -35,5 +35,6 @@ namespace WpfGraphView
             CtgOxyplotWindow oxyplotPage = new CtgOxyplotWindow();
             oxyplotPage.Show();
         }
+
     }
 }

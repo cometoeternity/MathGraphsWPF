@@ -343,7 +343,7 @@
                         Background="Transparent"
                         BorderBrush="Transparent"
                         Margin="5,5,5,5" Style="{DynamicResource CtgButton}" MouseEnter="ctg_MouseEnter" MouseLeave="ctg_MouseLeave" Click="ctg_Click">
-                    <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">Ctg(x)</TextBlock>
+                    <TextBlock FontSize="36" Foreground="#FFFDFAFA" FontFamily="Comic Sans MS">X^n</TextBlock>
                 </Button>
                 <Button x:Name="exp"
                         Height="100"

@@ -9,25 +9,24 @@ namespace WpfGraphView.Models
     public class PointGeneratorSin
     {
         public List<Point> Points { get; set; }
-        public PointGeneratorCos()
+        public PointGeneratorSin()
         {
             Points = new List<Point>();
         }
-        public List<Point> PointGenerator(double limitStart, double limitFinish, double y, double z, double w)
+        public List<Point> PointGenerator(double sinLimitStart, double sinLimitFinish, double sinAmplit, double sinSjatie, double sinXSdvig, double sinYSdvig)
         {
             Points = new List<Point>();
-            for (double x = limitStart; x < limitFinish; x += 0.1)
+            for (double x = sinLimitStart; x < sinLimitFinish; x += 0.5)
             {
-                Points.Add(new Point(x, Calculate(x, y, z, w)));
+                Points.Add(new Point(x, Calculate(x, sinAmplit, sinSjatie, sinXSdvig, sinYSdvig)));
             }
             return Points;
         }
 
-        private double Calculate(double x, double y, double z, double w)
+        private double Calculate(double x, double sinAmplit, double sinSjatie, double sinXSdvig, double sinYSdvig)
         {
-            var b = Math.Sin(x);
-            return b;
+            return sinAmplit * Math.Sin(x * sinSjatie + sinXSdvig) + sinYSdvig;
         }
     }
 }
-}
+
