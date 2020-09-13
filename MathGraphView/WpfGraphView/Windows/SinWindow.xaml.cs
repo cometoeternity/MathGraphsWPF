@@ -29,7 +29,6 @@ namespace WpfGraphView
         {
             InitializeComponent();
             sinButton.Click += sinButton_Click;
-            pointGeneratorSin = new PointGeneratorSin();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,11 +38,12 @@ namespace WpfGraphView
 
         private void sinButton_Click(object sender, RoutedEventArgs e)
         {
-            pointGeneratorSin.PointGenerator(float.Parse(sinLimitStartTextBox.Text), float.Parse(sinLimitFinishTextBox.Text), float.Parse(sinAmplitTextBox.Text), float.Parse(sinSjatieTextBox.Text), float.Parse(sinXSdvigTextBox.Text), float.Parse(sinYSdvigTextBox.Text));
+            pointGeneratorSin = new PointGeneratorSin();
+            pointGeneratorSin.PointGenerator();
             PlotModel model = new PlotModel();
             LinearAxis linearX = new LinearAxis();
-            linearX.Minimum = double.Parse(sinLimitStartTextBox.Text);
-            linearX.Maximum = double.Parse(sinLimitFinishTextBox.Text);
+            linearX.Minimum = pointGeneratorSin.SinLimitStart;
+            linearX.Maximum = pointGeneratorSin.SinLimitFinish;
             linearX.Position = AxisPosition.Bottom;
 
             LinearAxis linearY = new LinearAxis();
@@ -54,13 +54,25 @@ namespace WpfGraphView
             model.Axes.Add(linearX);
             model.Axes.Add(linearY);
             model.Title = "График Синуса";
+            model.TitleColor = OxyColor.FromRgb(224, 255, 255);
+            model.TextColor = OxyColor.FromRgb(224, 255, 255);
+            model.PlotAreaBorderColor = OxyColor.FromRgb(224, 255, 255);
+            model.LegendTextColor = OxyColor.FromRgb(224, 255, 255);
+            model.LegendTitleColor = OxyColor.FromRgb(224, 255, 255);
+            model.SubtitleColor = OxyColor.FromRgb(224, 255, 255); ;
+            model.SelectionColor = OxyColor.FromRgb(224, 255, 255);
             LineSeries lineSeries = new LineSeries();
+            lineSeries.Color = OxyColor.FromRgb(224, 255, 255);
             foreach (var item in pointGeneratorSin.Points)
             {
                 lineSeries.Points.Add(new DataPoint(item.X, item.Y));
             }
             model.Series.Add(lineSeries);
             Grafic.Model = model;
+        }
+        private void TextBox_Error(object sender, ValidationErrorEventArgs e)
+        {
+            MessageBox.Show(e.Error.ErrorContent.ToString());
         }
     }
 }

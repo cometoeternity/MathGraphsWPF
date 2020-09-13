@@ -39,11 +39,11 @@ namespace WpfGraphView
 
         private void expButton_Click(object sender, RoutedEventArgs e)
         {
-            pointGeneratorExp.PointGenerator(float.Parse(expLimitStartTextBox.Text), float.Parse(expLimitFinishTextBox.Text), float.Parse(expAmplitTextBox.Text), float.Parse(expSjatieTextBox.Text), float.Parse(expXSdvigTextBox.Text), float.Parse(expYSdvigTextBox.Text));
+            pointGeneratorExp.PointGenerator();
             PlotModel model = new PlotModel();
             LinearAxis linearX = new LinearAxis();
-            linearX.Minimum = double.Parse(expLimitStartTextBox.Text);
-            linearX.Maximum = double.Parse(expLimitFinishTextBox.Text);
+            linearX.Minimum = pointGeneratorExp.ExpLimitStart;
+            linearX.Maximum = pointGeneratorExp.ExpLimitFinish;
             linearX.Position = AxisPosition.Bottom;
 
             LinearAxis linearY = new LinearAxis();
@@ -54,13 +54,25 @@ namespace WpfGraphView
             model.Axes.Add(linearX);
             model.Axes.Add(linearY);
             model.Title = "График Экспоненты";
+            model.TitleColor = OxyColor.FromRgb(224, 255, 255);
+            model.TextColor = OxyColor.FromRgb(224, 255, 255);
+            model.PlotAreaBorderColor = OxyColor.FromRgb(224, 255, 255);
+            model.LegendTextColor = OxyColor.FromRgb(224, 255, 255);
+            model.LegendTitleColor = OxyColor.FromRgb(224, 255, 255);
+            model.SubtitleColor = OxyColor.FromRgb(224, 255, 255); ;
+            model.SelectionColor = OxyColor.FromRgb(224, 255, 255);
             LineSeries lineSeries = new LineSeries();
+            lineSeries.Color = OxyColor.FromRgb(224, 255, 255);
             foreach (var item in pointGeneratorExp.Points)
             {
                 lineSeries.Points.Add(new DataPoint(item.X, item.Y));
             }
             model.Series.Add(lineSeries);
             Grafic.Model = model;
+        }
+        private void TextBox_Error(object sender, ValidationErrorEventArgs e)
+        {
+            MessageBox.Show(e.Error.ErrorContent.ToString());
         }
     }
 }

@@ -32,17 +32,23 @@
                 </DropShadowEffect>
             </Grid.Effect>
             <Label Content="В диапазоне от" HorizontalAlignment="Left" Margin="50,110,0,0" VerticalAlignment="Top" Width="196" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
-            <TextBox x:Name="sinLimitStartTextBox" HorizontalAlignment="Left" Height="55" Margin="250,110,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25" />
+            <TextBox x:Name="sinLimitStartTextBox" HorizontalAlignment="Left" Height="55" Margin="250,110,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"
+                     Text="{Binding Path=SinLimitStart, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}" Validation.Error="TextBox_Error" />
             <Label Content="до" HorizontalAlignment="Left" Margin="321,110,0,0" VerticalAlignment="Top" Width="45" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
-            <TextBox x:Name="sinLimitFinishTextBox" HorizontalAlignment="Left" Height="55" Margin="370,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25" />
+            <TextBox x:Name="sinLimitFinishTextBox" HorizontalAlignment="Left" Height="55" Margin="370,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25" 
+                     Text="{Binding Path=SinLimitFinish, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}" Validation.Error="TextBox_Error" />
             <Label Content="Амплитуда:" HorizontalAlignment="Left" Margin="440,110,0,0" VerticalAlignment="Top" Width="160" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
-            <TextBox x:Name="sinAmplitTextBox" HorizontalAlignment="Left"  Height="60" Margin="605,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
-            <Label Content="Сжатие:" HorizontalAlignment="Left" Margin="685,110,0,0" VerticalAlignment="Top" Width="100" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
-            <TextBox x:Name="sinSjatieTextBox" HorizontalAlignment="Left" Height="60" Margin="790,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="sinAmplitTextBox" HorizontalAlignment="Left"  Height="60" Margin="605,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"
+                     Text="{Binding Path=SinAmplit, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}" Validation.Error="TextBox_Error" />
+            <Label Content="Сжатие:" HorizontalAlignment="Left" Margin="685,110,0,0" VerticalAlignment="Top" Width="102" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="sinSjatieTextBox" HorizontalAlignment="Left" Height="60" Margin="790,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"
+                     Text="{Binding Path=SinSjatie, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}" Validation.Error="TextBox_Error" />
             <Label Content="Сдвиг по оси X:" HorizontalAlignment="Left" Margin="860,110,0,0" VerticalAlignment="Top" Width="205" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
-            <TextBox x:Name="sinXSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="1070,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="sinXSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="1070,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"
+                     Text="{Binding Path=SinXSdvig, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}" Validation.Error="TextBox_Error" />
             <Label Content="Сдвиг по оси Y:" HorizontalAlignment="Left" Margin="1140,110,0,0" VerticalAlignment="Top" Width="200" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
-            <TextBox x:Name="sinYSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="1345,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="sinYSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="1345,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"
+                     Text="{Binding Path=SinYSdvig, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}" Validation.Error="TextBox_Error" />
             <Button x:Name="sinButton" Content="Построить" Margin="635,215,615,0" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" Height="100" VerticalAlignment="Top" Click="sinButton_Click"/>
         </Grid>
         <Grid Height="97"
@@ -65,7 +71,7 @@
             </Button>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="440" Margin="20,350,0,0" VerticalAlignment="Top" Width="1470" >
-            <oxy:PlotView x:Name="Grafic" Background="#1C2F3E" HorizontalAlignment="Left" Width="1480" Margin="10,0,0,163"/>
+            <oxy:PlotView x:Name="Grafic" Background="#1C2F3E" HorizontalAlignment="Left" Width="1460" Margin="10,0,0,10"/>
         </Grid>
     </Grid>
 </Window>

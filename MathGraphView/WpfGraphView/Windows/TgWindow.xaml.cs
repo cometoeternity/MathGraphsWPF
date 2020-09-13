@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -38,11 +39,11 @@ namespace WpfGraphView
 
         private void tgButton_Click(object sender, RoutedEventArgs e)
         {
-            pointGeneratorTg.PointGenerator(float.Parse(tgLimitStartTextBox.Text), float.Parse(tgLimitFinishTextBox.Text), float.Parse(tgAmplitTextBox.Text), float.Parse(tgSjatieTextBox.Text), float.Parse(tgXSdvigTextBox.Text), float.Parse(tgYSdvigTextBox.Text));
+            pointGeneratorTg.PointGenerator();
             PlotModel model = new PlotModel();
             LinearAxis linearX = new LinearAxis();
-            linearX.Minimum = double.Parse(tgLimitStartTextBox.Text);
-            linearX.Maximum = double.Parse(tgLimitFinishTextBox.Text);
+            linearX.Minimum = pointGeneratorTg.TgLimitStart;
+            linearX.Maximum = pointGeneratorTg.TgLimitFinish;
             linearX.Position = AxisPosition.Bottom;
 
             LinearAxis linearY = new LinearAxis();
@@ -53,7 +54,15 @@ namespace WpfGraphView
             model.Axes.Add(linearX);
             model.Axes.Add(linearY);
             model.Title = "График Тангенса";
+            model.TitleColor = OxyColor.FromRgb(224, 255, 255);
+            model.TextColor = OxyColor.FromRgb(224, 255, 255);
+            model.PlotAreaBorderColor = OxyColor.FromRgb(224, 255, 255);
+            model.LegendTextColor = OxyColor.FromRgb(224, 255, 255);
+            model.LegendTitleColor = OxyColor.FromRgb(224, 255, 255);
+            model.SubtitleColor = OxyColor.FromRgb(224, 255, 255); ;
+            model.SelectionColor = OxyColor.FromRgb(224, 255, 255);
             LineSeries lineSeries = new LineSeries();
+            lineSeries.Color = OxyColor.FromRgb(224, 255, 255);
             foreach (var item in pointGeneratorTg.Points)
             {
                 lineSeries.Points.Add(new DataPoint(item.X, item.Y));
@@ -61,5 +70,10 @@ namespace WpfGraphView
             model.Series.Add(lineSeries);
             Grafic.Model = model;
         }
+        private void TextBox_Error(object sender, ValidationErrorEventArgs e)
+        {
+            MessageBox.Show(e.Error.ErrorContent.ToString());
+        }
+
     }
 }
