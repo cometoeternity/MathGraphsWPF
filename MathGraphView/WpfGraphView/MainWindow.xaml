@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfGraphView"
         mc:Ignorable="d"
+        Icon="C:\Users\Acer\source\repos\MathGraphsWPF\MathGraphView\WpfGraphView\Resourses\11_icon-icons.com_67656.ico"
         Title="Графики Математических Функций" 
         Height="710" 
         Width="900"
