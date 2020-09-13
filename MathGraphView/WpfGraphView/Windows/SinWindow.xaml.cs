@@ -12,7 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfGraphView.Windows;
-using WpfGraphView.Windows.OxyPlotWindow;
+using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Series;
+using WpfGraphView.Models;
 
 namespace WpfGraphView
 {
@@ -21,9 +24,12 @@ namespace WpfGraphView
     /// </summary>
     public partial class SinWindow : Window
     {
+        PointGeneratorSin pointGeneratorSin;
         public SinWindow()
         {
             InitializeComponent();
+            sinButton.Click += sinButton_Click;
+            pointGeneratorSin = new PointGeneratorSin();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -33,9 +39,28 @@ namespace WpfGraphView
 
         private void sinButton_Click(object sender, RoutedEventArgs e)
         {
+            pointGeneratorSin.PointGenerator(float.Parse(sinLimitStartTextBox.Text), float.Parse(sinLimitFinishTextBox.Text), float.Parse(sinAmplitTextBox.Text), float.Parse(sinSjatieTextBox.Text), float.Parse(sinXSdvigTextBox.Text), float.Parse(sinYSdvigTextBox.Text));
+            PlotModel model = new PlotModel();
+            LinearAxis linearX = new LinearAxis();
+            linearX.Minimum = double.Parse(sinLimitStartTextBox.Text);
+            linearX.Maximum = double.Parse(sinLimitFinishTextBox.Text);
+            linearX.Position = AxisPosition.Bottom;
 
-            SinOxyplotWindow oxyplotPage = new SinOxyplotWindow();
-            oxyplotPage.Show();
+            LinearAxis linearY = new LinearAxis();
+            linearY.Minimum = pointGeneratorSin.Points.Min(p => p.Y);
+            linearY.Maximum = pointGeneratorSin.Points.Max(p => p.Y);
+            linearY.Position = AxisPosition.Left;
+
+            model.Axes.Add(linearX);
+            model.Axes.Add(linearY);
+            model.Title = "График Синуса";
+            LineSeries lineSeries = new LineSeries();
+            foreach (var item in pointGeneratorSin.Points)
+            {
+                lineSeries.Points.Add(new DataPoint(item.X, item.Y));
+            }
+            model.Series.Add(lineSeries);
+            Grafic.Model = model;
         }
     }
 }

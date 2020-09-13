@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="http://oxyplot.org/wpf"
         xmlns:local="clr-namespace:WpfGraphView"
         mc:Ignorable="d"
-        Title="Построение Параболы" Height="710" Width="900"
-        WindowStartupLocation="CenterOwner"
+        Title="Построение Параболы" Height="800" Width="1500"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent">
@@ -31,19 +32,19 @@
                                   Color="Gray">
                 </DropShadowEffect>
             </Grid.Effect>
-            <Label Content="В диапазоне от" HorizontalAlignment="Left" Margin="50,110,0,0" VerticalAlignment="Top" Width="230" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="parabLimitStartTextBox" HorizontalAlignment="Left" Height="55" Margin="300,110,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" />
-            <Label Content="до" HorizontalAlignment="Left" Margin="385,110,0,0" VerticalAlignment="Top" Width="44" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="parabLimitFinishTextBox" HorizontalAlignment="Left" Height="55" Margin="450,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" />
-            <Label Content="Сжатие:" HorizontalAlignment="Left" Margin="50,210,0,0" VerticalAlignment="Top" Width="220" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="parabSjatieTextBox" HorizontalAlignment="Left" Height="55" Margin="365,210,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="273" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
-            <Label Content="Сдвиг по оси X:" HorizontalAlignment="Left" Margin="50,310,0,0" VerticalAlignment="Top" Width="250" Height="57" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="parabXSdvigTextBox" HorizontalAlignment="Left" Height="57" Margin="365,310,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="273" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
-            <Label Content="Сдвиг по оси Y:" HorizontalAlignment="Left" Margin="50,410,0,0" VerticalAlignment="Top" Width="250" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="parabYSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="365,410,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="273" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
-            <Label Content="Степень:" HorizontalAlignment="Left" Margin="50,510,0,0" VerticalAlignment="Top" Width="150" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="parabPowTextBox" HorizontalAlignment="Left" Height="65" Margin="205,510,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
-            <Button x:Name="ctgButton" Content="Построить" Margin="500,550,60,30" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" Click="ctgButton_Click"/>
+            <Label Content="В диапазоне от" HorizontalAlignment="Left" Margin="50,110,0,0" VerticalAlignment="Top" Width="196" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="parabLimitStartTextBox" HorizontalAlignment="Left" Height="55" Margin="250,110,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25" />
+            <Label Content="до" HorizontalAlignment="Left" Margin="321,110,0,0" VerticalAlignment="Top" Width="45" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="parabLimitFinishTextBox" HorizontalAlignment="Left" Height="55" Margin="370,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25" />
+            <Label Content="Сжатие:" HorizontalAlignment="Left" Margin="440,110,0,0" VerticalAlignment="Top" Width="109" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="parabSjatieTextBox" HorizontalAlignment="Left"  Height="60" Margin="549,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Label Content="Сдвиг по оси X:" HorizontalAlignment="Left" Margin="625,110,0,0" VerticalAlignment="Top" Width="204" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="parabXSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="830,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Label Content="Сдвиг по оси Y:" HorizontalAlignment="Left" Margin="900,110,0,0" VerticalAlignment="Top" Width="200" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="parabYSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="1105,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Label Content="Степень:" HorizontalAlignment="Left" Margin="1170,110,0,0" VerticalAlignment="Top" Width="116" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="parabPowTextBox" HorizontalAlignment="Left" Height="60" Margin="1291,110,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Button x:Name="parabButton" Content="Построить" Margin="635,215,615,0" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" Height="100" VerticalAlignment="Top" Click="ctgButton_Click"/>
         </Grid>
         <Grid Height="97"
                   VerticalAlignment="Top"
@@ -62,6 +63,9 @@
                 <Image Source="C:\Users\Acer\source\repos\MathGraphsWPF\MathGraphView\WpfGraphView\Resourses\icons8-удалить-30.png"
                     Stretch="None"></Image>
             </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="440" Margin="20,350,0,0" VerticalAlignment="Top" Width="1470" >
+            <oxy:PlotView x:Name="Grafic" Background="#1C2F3E" HorizontalAlignment="Left" Width="1480" Margin="10,0,0,163"/>
         </Grid>
     </Grid>
 </Window>

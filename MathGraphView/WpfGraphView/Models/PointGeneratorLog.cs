@@ -25,7 +25,7 @@ namespace WpfGraphView.Models
 
         private double Calculate(double x, double logAmplit, double logSjatie, double logXSdvig, double logYSdvig)
         {
-            return logAmplit * Math.Log(x * logSjatie + logXSdvig) + logYSdvig;
+            return logAmplit * Math.Log10(x * logSjatie + logXSdvig) + logYSdvig;
         }
     }
 }

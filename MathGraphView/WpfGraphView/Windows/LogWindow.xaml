@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfGraphView.Windows"
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="Построение Логарифма" Height="710" Width="900"
-        WindowStartupLocation="CenterOwner"
+        Title="Построение Логарифма" Height="800" Width="1500"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent">
@@ -31,19 +32,19 @@
                                   Color="Gray">
                 </DropShadowEffect>
             </Grid.Effect>
-            <Label Content="В диапазоне от" HorizontalAlignment="Left" Margin="50,110,0,0" VerticalAlignment="Top" Width="230" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="logLimitStartTextBox" HorizontalAlignment="Left" Height="55" Margin="300,110,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" />
-            <Label Content="до" HorizontalAlignment="Left" Margin="385,110,0,0" VerticalAlignment="Top" Width="44" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="30"/>
-            <TextBox x:Name="logLimitFinishTextBox" HorizontalAlignment="Left" Height="55" Margin="450,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" />
-            <Label Content="Амплитуда:" HorizontalAlignment="Left" Margin="50,210,0,0" VerticalAlignment="Top" Width="220" Height="55" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
-            <TextBox x:Name="logAmplitTextBox" HorizontalAlignment="Left" Height="55" Margin="365,210,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="273" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
-            <Label Content="Сжатие:" HorizontalAlignment="Left" Margin="50,310,0,0" VerticalAlignment="Top" Width="220" Height="57" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
-            <TextBox x:Name="logSjatieTextBox" HorizontalAlignment="Left" Height="57" Margin="365,310,0,0" Background="#E0FFFF" TextWrapping="Wrap" Text="Введите число" VerticalAlignment="Top" Width="273" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32"/>
-            <Label Content="Сдвиг по оси X:" HorizontalAlignment="Left" Margin="50,410,0,0" VerticalAlignment="Top" Width="255" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
-            <TextBox x:Name="logXSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="310,410,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="30"/>
-            <Label Content="Сдвиг по оси Y:" HorizontalAlignment="Left" Margin="410,410,0,0" VerticalAlignment="Top" Width="258" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="32"/>
-            <TextBox x:Name="logYSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="668,410,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="30"/>
-            <Button x:Name="logButton" Content="Построить" Margin="500,550,60,30" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" Click="logButton_Click"/>
+            <Label Content="В диапазоне от" HorizontalAlignment="Left" Margin="50,110,0,0" VerticalAlignment="Top" Width="196" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="logLimitStartTextBox" HorizontalAlignment="Left" Height="55" Margin="250,110,0,0"  Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25" />
+            <Label Content="до" HorizontalAlignment="Left" Margin="321,110,0,0" VerticalAlignment="Top" Width="45" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="logLimitFinishTextBox" HorizontalAlignment="Left" Height="55" Margin="370,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Label Content="Амплитуда:" HorizontalAlignment="Left" Margin="440,110,0,0" VerticalAlignment="Top" Width="160" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="logAmplitTextBox" HorizontalAlignment="Left"  Height="60" Margin="605,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Label Content="Сжатие:" HorizontalAlignment="Left" Margin="685,110,0,0" VerticalAlignment="Top" Width="100" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="logSjatieTextBox" HorizontalAlignment="Left" Height="60" Margin="790,110,0,0" Background="#E0FFFF" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Label Content="Сдвиг по оси X:" HorizontalAlignment="Left" Margin="860,110,0,0" VerticalAlignment="Top" Width="205" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="logXSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="1070,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Label Content="Сдвиг по оси Y:" HorizontalAlignment="Left" Margin="1140,110,0,0" VerticalAlignment="Top" Width="200" Height="60" Foreground="#E0FFFF" FontFamily="Comic Sans MS" FontSize="25"/>
+            <TextBox x:Name="logYSdvigTextBox" HorizontalAlignment="Left" Height="60" Margin="1345,110,0,0" Background="#E0FFFF" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="25"/>
+            <Button x:Name="logButton" Content="Построить" Margin="635,215,615,0" Background="#E0FFFF"  Foreground="#1C2F3E" FontFamily="Comic Sans MS" FontSize="32" Height="100" VerticalAlignment="Top" Click="logButton_Click"/>
         </Grid>
         <Grid Height="97"
                   VerticalAlignment="Top"
@@ -64,6 +65,9 @@
                 <Image Source="C:\Users\Acer\source\repos\MathGraphsWPF\MathGraphView\WpfGraphView\Resourses\icons8-удалить-30.png"
                     Stretch="None"></Image>
             </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="440" Margin="20,350,0,0" VerticalAlignment="Top" Width="1470" >
+            <oxy:PlotView x:Name="Grafic" Background="#1C2F3E" HorizontalAlignment="Left" Width="1480" Margin="10,0,0,163"/>
         </Grid>
     </Grid>
 </Window>

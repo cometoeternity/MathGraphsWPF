@@ -25,7 +25,7 @@ namespace WpfGraphView.Models
 
         private double Calculate(double x, double expAmplit, double expSjatie, double expXSdvig, double expYSdvig)
         {
-            return expAmplit * Math.Cos(x * expSjatie + expXSdvig) + expYSdvig;
+            return expAmplit * Math.Exp(x * expSjatie + expXSdvig) + expYSdvig;
         }
     }
 }

@@ -11,7 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfGraphView.Windows.OxyPlotWindow;
+using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Series;
+using WpfGraphView.Models;
 
 namespace WpfGraphView
 {
@@ -20,9 +23,12 @@ namespace WpfGraphView
     /// </summary>
     public partial class TgWindow : Window
     {
+        PointGeneratorTg pointGeneratorTg;
         public TgWindow()
         {
             InitializeComponent();
+            tgButton.Click += tgButton_Click;
+            pointGeneratorTg = new PointGeneratorTg();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,8 +38,28 @@ namespace WpfGraphView
 
         private void tgButton_Click(object sender, RoutedEventArgs e)
         {
-            TgOxyplotWindow oxyplotPage = new TgOxyplotWindow();
-            oxyplotPage.Show();
+            pointGeneratorTg.PointGenerator(float.Parse(tgLimitStartTextBox.Text), float.Parse(tgLimitFinishTextBox.Text), float.Parse(tgAmplitTextBox.Text), float.Parse(tgSjatieTextBox.Text), float.Parse(tgXSdvigTextBox.Text), float.Parse(tgYSdvigTextBox.Text));
+            PlotModel model = new PlotModel();
+            LinearAxis linearX = new LinearAxis();
+            linearX.Minimum = double.Parse(tgLimitStartTextBox.Text);
+            linearX.Maximum = double.Parse(tgLimitFinishTextBox.Text);
+            linearX.Position = AxisPosition.Bottom;
+
+            LinearAxis linearY = new LinearAxis();
+            linearY.Minimum = pointGeneratorTg.Points.Min(p => p.Y);
+            linearY.Maximum = pointGeneratorTg.Points.Max(p => p.Y);
+            linearY.Position = AxisPosition.Left;
+
+            model.Axes.Add(linearX);
+            model.Axes.Add(linearY);
+            model.Title = "График Тангенса";
+            LineSeries lineSeries = new LineSeries();
+            foreach (var item in pointGeneratorTg.Points)
+            {
+                lineSeries.Points.Add(new DataPoint(item.X, item.Y));
+            }
+            model.Series.Add(lineSeries);
+            Grafic.Model = model;
         }
     }
 }

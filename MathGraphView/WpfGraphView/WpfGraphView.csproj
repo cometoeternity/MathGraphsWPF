@@ -88,24 +88,6 @@
     <Compile Include="Windows\LogWindow.xaml.cs">
       <DependentUpon>LogWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\OxyPlotWindow\CosOxyplotWindow.xaml.cs">
-      <DependentUpon>CosOxyplotWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\OxyPlotWindow\ParabOxyplotWindow.xaml.cs">
-      <DependentUpon>ParabOxyplotWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\OxyPlotWindow\ExpOxyplotWindow.xaml.cs">
-      <DependentUpon>ExpOxyplotWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\OxyPlotWindow\LogOxyplotWindow.xaml.cs">
-      <DependentUpon>LogOxyplotWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\OxyPlotWindow\SinOxyplotWindow.xaml.cs">
-      <DependentUpon>SinOxyplotWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\OxyPlotWindow\TgOxyplotWindow.xaml.cs">
-      <DependentUpon>TgOxyplotWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\SinWindow.xaml.cs">
       <DependentUpon>SinWindow.xaml</DependentUpon>
     </Compile>
@@ -141,30 +123,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\LogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\OxyPlotWindow\CosOxyplotWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\OxyPlotWindow\ParabOxyplotWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\OxyPlotWindow\ExpOxyplotWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\OxyPlotWindow\LogOxyplotWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\OxyPlotWindow\SinOxyplotWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\OxyPlotWindow\TgOxyplotWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

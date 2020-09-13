@@ -11,7 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfGraphView.Windows.OxyPlotWindow;
+using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Series;
+using WpfGraphView.Models;
 
 namespace WpfGraphView.Windows
 {
@@ -20,9 +23,12 @@ namespace WpfGraphView.Windows
     /// </summary>
     public partial class LogWindow : Window
     {
+        PointGeneratorLog pointGeneratorLog;
         public LogWindow()
         {
             InitializeComponent();
+            logButton.Click += logButton_Click;
+            pointGeneratorLog = new PointGeneratorLog();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,8 +38,28 @@ namespace WpfGraphView.Windows
 
         private void logButton_Click(object sender, RoutedEventArgs e)
         {
-            LogOxyplotWindow oxyplotPage = new LogOxyplotWindow();
-            oxyplotPage.Show();
+            pointGeneratorLog.PointGenerator(float.Parse(logLimitStartTextBox.Text), float.Parse(logLimitFinishTextBox.Text), float.Parse(logAmplitTextBox.Text), float.Parse(logSjatieTextBox.Text), float.Parse(logXSdvigTextBox.Text), float.Parse(logYSdvigTextBox.Text));
+            PlotModel model = new PlotModel();
+            LinearAxis linearX = new LinearAxis();
+            linearX.Minimum = double.Parse(logLimitStartTextBox.Text);
+            linearX.Maximum = double.Parse(logLimitFinishTextBox.Text);
+            linearX.Position = AxisPosition.Bottom;
+
+            LinearAxis linearY = new LinearAxis();
+            linearY.Minimum = pointGeneratorLog.Points.Min(p => p.Y);
+            linearY.Maximum = pointGeneratorLog.Points.Max(p => p.Y);
+            linearY.Position = AxisPosition.Left;
+
+            model.Axes.Add(linearX);
+            model.Axes.Add(linearY);
+            model.Title = "График логарифма";
+            LineSeries lineSeries = new LineSeries();
+            foreach (var item in pointGeneratorLog.Points)
+            {
+                lineSeries.Points.Add(new DataPoint(item.X, item.Y));
+            }
+            model.Series.Add(lineSeries);
+            Grafic.Model = model;
         }
     }
 }
